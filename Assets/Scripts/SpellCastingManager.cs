@@ -110,6 +110,7 @@ public class SpellCastingManager : MonoBehaviour
     
     void TryCastSpell()
     {
+        Debug.Log("TryCastSpell casted!");
         if (currentSpell == null)
         {
             Debug.LogWarning("No spell selected!");
