@@ -19174,7 +19174,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.38072762, b: 0.1505874, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -23813,7 +23813,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.7
+  m_Radius: 0.34
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &8023241928856756782
 Rigidbody:
@@ -23899,7 +23899,7 @@ Light:
   serializedVersion: 11
   m_Type: 2
   m_Color: {r: 0.6397059, g: 0.46213236, b: 0.07996324, a: 1}
-  m_Intensity: 1.1
+  m_Intensity: 1.3
   m_Range: 5
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
