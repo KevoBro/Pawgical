@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6803940025369081494}
   - component: {fileID: 4106909895672690693}
   - component: {fileID: 2710531835516500256}
+  - component: {fileID: 7404588206213346955}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Untagged
@@ -92,10 +93,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyZigZagNavMesh
   moveSpeed: 0.2
-  stoppingDistance: 1.5
+  stoppingDistance: 1
   zigzagFrequency: 20
   zigzagAmplitude: 2
   updateRate: 0.1
+--- !u!114 &7404588206213346955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31874130230302956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 482f8c646f80a0346875f3ee0f51b6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  damage: 10
+  attackInterval: 1
+  attackRange: 1
 --- !u!1 &409769994469182181
 GameObject:
   m_ObjectHideFlags: 0
