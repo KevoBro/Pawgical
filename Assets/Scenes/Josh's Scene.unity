@@ -414,8 +414,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf5ac5a04f355b4f85db86e02ce7c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrawingSimple
-  controllerNode: 5
+  drawingControllerNode: 5
+  submitControllerNode: 4
   drawPoint: {fileID: 1099878969}
+  playerCamera: {fileID: 0}
+  canvasDistance: 0.5
   lineMaterial: {fileID: 2100000, guid: c4344e0ab93deeb44a4b55856e6492ba, type: 2}
   lineWidth: 0.01
   minDistance: 0.01
