@@ -17,8 +17,8 @@ public class DrawingController : MonoBehaviour
     [SerializeField] private float minDistance = 0.01f;
     [SerializeField] private Color lineColor = Color.cyan;
     
-    //[Header("References")]
-    //[SerializeField] private ShapeRecognizer shapeRecognizer;
+    [Header("References")]
+    [SerializeField] private ShapeRecognizer shapeRecognizer;
     
     private LineRenderer currentLine;
     private List<Vector3> currentPoints = new List<Vector3>();
@@ -256,11 +256,11 @@ public class DrawingController : MonoBehaviour
     void SubmitDrawing()
     {
         // Send points to shape recognizer if we have enough points
-        //if (currentPoints.Count > 5 && shapeRecognizer != null)
-        //{
-        //    shapeRecognizer.RecognizeShape(currentPoints);
-        //}
-        if (currentPoints.Count > 0)
+        if (currentPoints.Count > 5 && shapeRecognizer != null)
+        {
+            shapeRecognizer.RecognizeShape(currentPoints);
+        }
+        else if (currentPoints.Count > 0)
         {
             Debug.Log("Drawing submitted with " + currentPoints.Count + " points (shape recognition not available)");
         }
