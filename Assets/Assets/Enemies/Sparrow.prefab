@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 967081707729221692}
   - component: {fileID: 2636916777841862254}
   - component: {fileID: 885956200817033722}
+  - component: {fileID: 4181959264275873542}
   m_Layer: 0
   m_Name: Sparrow
   m_TagString: Untagged
@@ -496,6 +497,26 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4181959264275873542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8529457379534740208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc9aebdc51b3c14793732df724af3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHoppingNavMesh
+  moveSpeed: 0.5
+  stoppingDistance: 1.5
+  minHopHeight: 0.2
+  maxHopHeight: 0.5
+  hopDuration: 0.3
+  minHopInterval: 0.5
+  maxHopInterval: 2
+  updateRate: 0.1
 --- !u!1 &8819468264880261390
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,14 +541,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8819468264880261390}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6240553, y: 0.3324982, z: 0.33249825, w: 0.6240552}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2154638151543974087}
   m_Father: {fileID: 967081707729221692}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &8942603391556508232
 GameObject:
   m_ObjectHideFlags: 0
