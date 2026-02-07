@@ -22,7 +22,7 @@ public class EnemyZigZagNavMesh : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
-        agent.speed = moveSpeed + Random.Range(-0.5f, 0.5f);
+        agent.speed = moveSpeed + Random.Range(-0.1f, 0.1f);
         agent.stoppingDistance = stoppingDistance;
         
         // Random starting point in the zigzag pattern

@@ -25,7 +25,7 @@ public class EnemyHoppingNavMeshSimple : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
         
-        agent.speed = moveSpeed + Random.Range(-0.5f, 0.5f);
+        agent.speed = moveSpeed + Random.Range(-0.1f, 0.1f);
         agent.stoppingDistance = stoppingDistance;
         
         nextHopTime = Time.time + Random.Range(minHopInterval, maxHopInterval);
