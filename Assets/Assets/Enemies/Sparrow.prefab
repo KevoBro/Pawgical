@@ -431,9 +431,10 @@ GameObject:
   - component: {fileID: 885956200817033722}
   - component: {fileID: 4181959264275873542}
   - component: {fileID: -7459591912860023800}
+  - component: {fileID: 1206254106062203878}
   m_Layer: 0
   m_Name: Sparrow
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -533,6 +534,19 @@ MonoBehaviour:
   damage: 10
   attackInterval: 1
   attackRange: 1
+--- !u!114 &1206254106062203878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8529457379534740208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704e043168d520e4aa1b71f8c38cf9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 10
 --- !u!1 &8819468264880261390
 GameObject:
   m_ObjectHideFlags: 0
