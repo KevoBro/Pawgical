@@ -256,6 +256,7 @@ public class DrawingController : MonoBehaviour
     void SubmitDrawing()
     {
         // Send points to shape recognizer if we have enough points
+        Debug.Log(shapeRecognizer);
         if (currentPoints.Count > 5 && shapeRecognizer != null)
         {
             shapeRecognizer.RecognizeShape(currentPoints);

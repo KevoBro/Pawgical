@@ -2679,9 +2679,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1680501587, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Name
@@ -2709,7 +2717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.059
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3277,9 +3285,9 @@ MonoBehaviour:
   submitControllerNode: 4
   drawPoint: {fileID: 1099878969}
   playerCamera: {fileID: 622624274}
-  canvasDistance: 0.5
+  canvasDistance: 1
   lineMaterial: {fileID: 2100000, guid: c4344e0ab93deeb44a4b55856e6492ba, type: 2}
-  lineWidth: 0.01
+  lineWidth: 0.03
   minDistance: 0.01
   lineColor: {r: 0, g: 1, b: 1, a: 1}
   shapeRecognizer: {fileID: 195577441}
