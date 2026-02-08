@@ -189,7 +189,7 @@ public class DrawingController : MonoBehaviour
 
     void StartDrawing()
     {
-        Debug.Log("START DRAWING CALLED!");
+        
         isDrawing = true;
         currentPoints.Clear();
         
@@ -202,7 +202,7 @@ public class DrawingController : MonoBehaviour
         currentLineObject = new GameObject("DrawnLine");
         currentLine = currentLineObject.AddComponent<LineRenderer>();
         
-        Debug.Log("Line object created: " + currentLineObject.name);
+        
         
         currentLine.material = lineMaterial;
         currentLine.startWidth = lineWidth;
@@ -214,12 +214,12 @@ public class DrawingController : MonoBehaviour
         
         AddPoint(GetDrawPosition());
         
-        Debug.Log("First point added at: " + GetDrawPosition());
+        
     }
 
     void NewLine() 
     {
-        Debug.Log("NEW LINE CALLED!");
+        
         isDrawing = true;
         currentPoints.Clear();
         lineNumber++;
@@ -227,7 +227,7 @@ public class DrawingController : MonoBehaviour
         currentLineObject = new GameObject("DrawnLine" + lineNumber);
         currentLine = currentLineObject.AddComponent<LineRenderer>();
         
-        Debug.Log("Line object created: " + currentLineObject.name);
+        
         
         currentLine.material = lineMaterial;
         currentLine.startWidth = lineWidth;
@@ -239,7 +239,7 @@ public class DrawingController : MonoBehaviour
         
         AddPoint(GetDrawPosition());
         
-        Debug.Log("First point added at: " + GetDrawPosition());
+        
     }
 
     void ContinueDrawing()
@@ -256,7 +256,6 @@ public class DrawingController : MonoBehaviour
     void SubmitDrawing()
     {
         // Send points to shape recognizer if we have enough points
-        Debug.Log(shapeRecognizer);
         if (currentPoints.Count > 5 && shapeRecognizer != null)
         {
             shapeRecognizer.RecognizeShape(currentPoints);
