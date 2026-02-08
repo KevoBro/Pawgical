@@ -17,7 +17,7 @@ public class ShapeRecognizer : MonoBehaviour
     [SerializeField] private string templateName = "NewShape"; // Name for the next template
     
     [Header("Debug")]
-    [SerializeField] private bool showDebugInfo = true;
+    [SerializeField] private bool showDebugInfo = false;
     
     public delegate void ShapeRecognizedHandler(string shapeName, float confidence);
     public event ShapeRecognizedHandler OnShapeRecognized;
