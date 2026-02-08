@@ -24248,7 +24248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyName
@@ -24259,12 +24259,20 @@ PrefabInstance:
       value: Snake
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyName
+      value: Monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].baseHealth
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].baseHealth
-      value: 50
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].baseHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyPrefab
@@ -24280,7 +24288,15 @@ PrefabInstance:
       objectReference: {fileID: 31874130230302956, guid: eb6e1a893042abd49a8fc658f393d0b0, type: 3}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].spawnWeight
-      value: 20
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 7558977820561715611, guid: f916a20238f12fa438b9202e1c6b7728, type: 3}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].spawnWeight
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27612,7 +27628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyName
@@ -27623,12 +27639,20 @@ PrefabInstance:
       value: Snake
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyName
+      value: Monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].baseHealth
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].baseHealth
-      value: 50
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].baseHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyPrefab
@@ -27644,7 +27668,15 @@ PrefabInstance:
       objectReference: {fileID: 31874130230302956, guid: eb6e1a893042abd49a8fc658f393d0b0, type: 3}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].spawnWeight
-      value: 20
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 7558977820561715611, guid: f916a20238f12fa438b9202e1c6b7728, type: 3}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].spawnWeight
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33150,7 +33182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyName
@@ -33161,12 +33193,20 @@ PrefabInstance:
       value: Snake
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyName
+      value: Monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].baseHealth
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].baseHealth
-      value: 50
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].baseHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyPrefab
@@ -33182,7 +33222,15 @@ PrefabInstance:
       objectReference: {fileID: 31874130230302956, guid: eb6e1a893042abd49a8fc658f393d0b0, type: 3}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].spawnWeight
-      value: 20
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 7558977820561715611, guid: f916a20238f12fa438b9202e1c6b7728, type: 3}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].spawnWeight
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -43114,7 +43162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyName
@@ -43125,12 +43173,20 @@ PrefabInstance:
       value: Snake
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyName
+      value: Monkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].baseHealth
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].baseHealth
-      value: 50
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].baseHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].enemyPrefab
@@ -43138,7 +43194,7 @@ PrefabInstance:
       objectReference: {fileID: 8529457379534740208, guid: d1a76adc92b57404788ee349c7ca4a94, type: 3}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[0].spawnWeight
-      value: 80
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].enemyPrefab
@@ -43147,6 +43203,14 @@ PrefabInstance:
     - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
       propertyPath: enemyTypes.Array.data[1].spawnWeight
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].enemyPrefab
+      value: 
+      objectReference: {fileID: 7558977820561715611, guid: f916a20238f12fa438b9202e1c6b7728, type: 3}
+    - target: {fileID: 4199649358115914646, guid: 93fc2c5c58532784e82ee6c7c0f84d8a, type: 3}
+      propertyPath: enemyTypes.Array.data[2].spawnWeight
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
