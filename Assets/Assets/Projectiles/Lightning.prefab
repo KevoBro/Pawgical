@@ -138,9 +138,9 @@ GameObject:
   - component: {fileID: 4175083964018029357}
   - component: {fileID: 5587893284708832503}
   - component: {fileID: 1988257746916122022}
-  - component: {fileID: 9009937755691590360}
   - component: {fileID: 7247743643637232932}
   - component: {fileID: 5662431992438424446}
+  - component: {fileID: 7647218895967786980}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -4966,19 +4966,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &9009937755691590360
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292328834022677082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3c8195572a0be74b9abda118a5f50e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LightningProjectile
-  lightningAOEPrefab: {fileID: 2324285075477037863, guid: d79159e1d9dc20049becaddb175e3401, type: 3}
 --- !u!135 &7247743643637232932
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5027,6 +5014,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7647218895967786980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292328834022677082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8195572a0be74b9abda118a5f50e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightningProjectile
+  lightningAOEPrefab: {fileID: 2324285075477037863, guid: d79159e1d9dc20049becaddb175e3401, type: 3}
 --- !u!1 &6485441522727413487
 GameObject:
   m_ObjectHideFlags: 0

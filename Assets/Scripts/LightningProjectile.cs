@@ -16,6 +16,8 @@ public class LightningProjectile : MonoBehaviour
         this.speed = speed;
         this.lifetime = lifetime;
         this.spawnTime = Time.time;
+        Debug.Log("Lightning spawned ");
+        
     }
     
     void Update()
@@ -35,6 +37,7 @@ public class LightningProjectile : MonoBehaviour
         // Spawn AOE on any surface hit (enemies, ground, walls)
         if (other.CompareTag("Enemy") || other.CompareTag("Ground") || other.CompareTag("Wall"))
         {
+            Debug.Log("Lightning spawned ");
             SpawnLightningAOE(other.ClosestPoint(transform.position));
             Destroy(gameObject);
         }
