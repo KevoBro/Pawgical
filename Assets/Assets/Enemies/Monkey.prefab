@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 3869190125746850915}
   m_Layer: 0
   m_Name: Monkey
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 704e043168d520e4aa1b71f8c38cf9c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  maxHealth: 100
+  maxHealth: 60
   flashDuration: 0.2
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   deathEffectPrefab: {fileID: 5977586517971993488, guid: 0866a7d04bd66584bb5f864d602b85ce, type: 3}
