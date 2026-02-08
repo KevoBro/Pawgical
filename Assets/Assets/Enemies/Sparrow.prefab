@@ -485,7 +485,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8529457379534740208}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc9aebdc51b3c14793732df724af3fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHoppingNavMesh
-  moveSpeed: 0.5
+  moveSpeed: 1.5
   stoppingDistance: 1
   minHopHeight: 0.2
   maxHopHeight: 0.5
