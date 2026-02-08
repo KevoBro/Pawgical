@@ -10,6 +10,10 @@ public class SpellCastingManager : MonoBehaviour
     [Header("Spell Definitions")]
     [SerializeField] private List<SpellData> spells = new List<SpellData>();
     
+    [Header("Audio Settings")]
+    [SerializeField] private AudioSource audioSource; // Add this
+    [SerializeField] private float soundVolume = 1f; // Add this
+    
     [Header("References")]
     [SerializeField] private ShapeRecognizer shapeRecognizer;
     
@@ -23,6 +27,14 @@ public class SpellCastingManager : MonoBehaviour
     
     void Start()
     {
+        // Create AudioSource if not assigned
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.playOnAwake = false;
+            audioSource.spatialBlend = 0f; // 2D sound for UI-like spell sounds
+        }
+        
         // Get the casting hand controller
         List<UnityEngine.XR.InputDevice> devices = new List<UnityEngine.XR.InputDevice>();
         UnityEngine.XR.InputDevices.GetDevicesAtXRNode(castingHand, devices);
@@ -142,17 +154,32 @@ public class SpellCastingManager : MonoBehaviour
             return;
         }
         
+        // Play spell sound
+        if (spell.castSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(spell.castSound, soundVolume);
+        }
+        else if (spell.castSound == null && showDebugInfo)
+        {
+            Debug.LogWarning($"No cast sound assigned for spell: {spell.shapeName}");
+        }
+        
         // Spawn projectile at cast point
         Vector3 spawnPosition = castPoint != null ? castPoint.position : transform.position;
         Quaternion spawnRotation = castPoint != null ? castPoint.rotation : transform.rotation;
         
         GameObject projectile = Instantiate(spell.projectilePrefab, spawnPosition, spawnRotation);
         
-        // Initialize projectile with spell data
-        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        // Get any component that implements IProjectile
+        IProjectile projectileScript = projectile.GetComponent<IProjectile>();
+        
         if (projectileScript != null)
         {
             projectileScript.Initialize(spell.damage, spell.projectileSpeed, spell.lifetime);
+        }
+        else
+        {
+            Debug.LogError($"Projectile prefab for {spell.shapeName} doesn't have a script implementing IProjectile!");
         }
         
         if (showDebugInfo)
@@ -209,6 +236,7 @@ public class SpellData
 {
     public string shapeName; // Must match template name in ShapeRecognizer
     public GameObject projectilePrefab;
+    public AudioClip castSound;
     public float damage = 10f;
     public float projectileSpeed = 10f;
     public float cooldown = 1f;

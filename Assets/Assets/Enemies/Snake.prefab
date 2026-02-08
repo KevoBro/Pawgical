@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4106909895672690693}
   - component: {fileID: 2710531835516500256}
   - component: {fileID: 7404588206213346955}
+  - component: {fileID: 6398956913992266939}
   m_Layer: 0
   m_Name: Snake
   m_TagString: Enemy
@@ -66,7 +67,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31874130230302956}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 0.2
   m_Acceleration: 8
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c19090735816bc4aa8a7a8c558091f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyZigZagNavMesh
-  moveSpeed: 0.2
+  moveSpeed: 1
   stoppingDistance: 1
   zigzagFrequency: 20
   zigzagAmplitude: 2
@@ -110,8 +111,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
   damage: 10
-  attackInterval: 1
-  attackRange: 1
+  attackInterval: 5
+  attackRange: 5
+--- !u!114 &6398956913992266939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 31874130230302956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704e043168d520e4aa1b71f8c38cf9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 30
+  pointValue: 10
+  flashDuration: 0.2
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  deathEffectPrefab: {fileID: 5977586517971993488, guid: 0866a7d04bd66584bb5f864d602b85ce, type: 3}
+  effectDuration: 2
+  fadeOutOnDeath: 1
+  fadeOutDuration: 0.5
 --- !u!1 &409769994469182181
 GameObject:
   m_ObjectHideFlags: 0
