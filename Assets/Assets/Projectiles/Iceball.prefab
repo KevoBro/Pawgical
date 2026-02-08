@@ -4715,6 +4715,7 @@ GameObject:
   - component: {fileID: 366809388848902225}
   - component: {fileID: 5718432243599503789}
   - component: {fileID: 5409274883156472979}
+  - component: {fileID: 402295245763604725}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -4747,9 +4748,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0, g: 0.754716, b: 0.9044118, a: 1}
-  m_Intensity: 1.1
-  m_Range: 5
+  m_Color: {r: 0.08050018, g: 0.53895235, b: 0.6320754, a: 0}
+  m_Intensity: 1
+  m_Range: 1
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082
   m_CookieSize: 10
@@ -4822,6 +4823,35 @@ MonoBehaviour:
   minTime: 0.1
   maxTime: 0.25
   everyFrame: 1
+--- !u!114 &402295245763604725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4399176546458037134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &5938448935931680317
 GameObject:
   m_ObjectHideFlags: 0
@@ -14496,7 +14526,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.22745098, g: 0.27058825, b: 0.28627452, a: 1}
+      maxColor: {r: 0.22272164, g: 0.65754807, b: 0.8584906, a: 0.54509807}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
