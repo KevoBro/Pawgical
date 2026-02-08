@@ -135,31 +135,36 @@ public class SpellCastingManager : MonoBehaviour
     }
     
     void CastSpell(SpellData spell)
+{
+    if (spell.projectilePrefab == null)
     {
-        if (spell.projectilePrefab == null)
-        {
-            Debug.LogError($"No projectile prefab assigned for spell: {spell.shapeName}");
-            return;
-        }
-        
-        // Spawn projectile at cast point
-        Vector3 spawnPosition = castPoint != null ? castPoint.position : transform.position;
-        Quaternion spawnRotation = castPoint != null ? castPoint.rotation : transform.rotation;
-        
-        GameObject projectile = Instantiate(spell.projectilePrefab, spawnPosition, spawnRotation);
-        
-        // Initialize projectile with spell data
-        Projectile projectileScript = projectile.GetComponent<Projectile>();
-        if (projectileScript != null)
-        {
-            projectileScript.Initialize(spell.damage, spell.projectileSpeed, spell.lifetime);
-        }
-        
-        if (showDebugInfo)
-        {
-            Debug.Log($"<color=green>Cast {spell.shapeName}! Cooldown: {spell.cooldown}s</color>");
-        }
+        Debug.LogError($"No projectile prefab assigned for spell: {spell.shapeName}");
+        return;
     }
+    
+    // Spawn projectile at cast point
+    Vector3 spawnPosition = castPoint != null ? castPoint.position : transform.position;
+    Quaternion spawnRotation = castPoint != null ? castPoint.rotation : transform.rotation;
+    
+    GameObject projectile = Instantiate(spell.projectilePrefab, spawnPosition, spawnRotation);
+    
+    // Get any component that implements IProjectile
+    IProjectile projectileScript = projectile.GetComponent<IProjectile>();
+    
+    if (projectileScript != null)
+    {
+        projectileScript.Initialize(spell.damage, spell.projectileSpeed, spell.lifetime);
+    }
+    else
+    {
+        Debug.LogError($"Projectile prefab for {spell.shapeName} doesn't have a script implementing IProjectile!");
+    }
+    
+    if (showDebugInfo)
+    {
+        Debug.Log($"<color=green>Cast {spell.shapeName}! Cooldown: {spell.cooldown}s</color>");
+    }
+}
     
     void UpdateCooldowns()
     {

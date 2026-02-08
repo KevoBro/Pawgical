@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LightningProjectile : MonoBehaviour
+public class LightningProjectile : MonoBehaviour, IProjectile
 {
     [Header("Projectile Settings")]
     private float speed;
