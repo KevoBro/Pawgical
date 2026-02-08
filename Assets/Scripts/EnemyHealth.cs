@@ -7,6 +7,9 @@ public class EnemyHealth : MonoBehaviour
     public float maxHealth = 50f;
     private float currentHealth;
     
+    [Header("Points")]
+    public int pointValue = 10; // Points awarded when killed
+    
     [Header("Damage Visual Feedback")]
     [SerializeField] private float flashDuration = 0.2f;
     [SerializeField] private Color damageColor = Color.red;
@@ -44,7 +47,13 @@ public class EnemyHealth : MonoBehaviour
         maxHealth = health;
         currentHealth = health;
     }
-
+    
+    // NEW: Allow spawner to set point value
+    public void SetPointValue(int points)
+    {
+        pointValue = points;
+    }
+    
     public float GetHealthPercentage()
     {
         return currentHealth / maxHealth;
@@ -83,6 +92,12 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log($"{gameObject.name} died!");
+        
+        // Award points to player
+        if (PointManager.Instance != null)
+        {
+            PointManager.Instance.AddPoints(pointValue);
+        }
         
         // Spawn smoke effect
         if (deathEffectPrefab != null)

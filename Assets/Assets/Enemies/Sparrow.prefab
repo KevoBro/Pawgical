@@ -532,8 +532,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
   damage: 10
-  attackInterval: 1
-  attackRange: 1
+  attackInterval: 3
+  attackRange: 3
 --- !u!114 &1206254106062203878
 MonoBehaviour:
   m_ObjectHideFlags: 0
