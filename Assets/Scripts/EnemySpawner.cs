@@ -8,14 +8,14 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private List<EnemySpawnData> enemyTypes = new List<EnemySpawnData>();
     [SerializeField] private float minSpawnInterval = 2f;
     [SerializeField] private float maxSpawnInterval = 5f;
-    [SerializeField] private int maxEnemiesAlive = 10; // Prevent too many enemies
+    [SerializeField] private int maxEnemiesAlive = 10;
     
     [Header("Size Randomization")]
     [SerializeField] private float minScale = 0.7f;
     [SerializeField] private float maxScale = 1.3f;
     
     [Header("Spawn Area")]
-    [SerializeField] private float spawnRadius = 1f; // Random offset from spawner position
+    [SerializeField] private float spawnRadius = 1f;
     
     [Header("Debug")]
     [SerializeField] private bool showSpawnRadius = true;
@@ -40,11 +40,9 @@ public class EnemySpawner : MonoBehaviour
         
         while (isSpawning)
         {
-            // Wait random interval
             float waitTime = Random.Range(minSpawnInterval, maxSpawnInterval);
             yield return new WaitForSeconds(waitTime);
             
-            // Only spawn if under the limit
             if (currentEnemyCount < maxEnemiesAlive)
             {
                 SpawnRandomEnemy();
@@ -58,7 +56,6 @@ public class EnemySpawner : MonoBehaviour
     
     void SpawnRandomEnemy()
     {
-        // Pick random enemy type based on spawn weights
         EnemySpawnData spawnData = GetWeightedRandomEnemy();
         
         if (spawnData == null || spawnData.enemyPrefab == null)
@@ -67,39 +64,35 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
         
-        // Calculate spawn position with random offset
         Vector3 randomOffset = Random.insideUnitSphere * spawnRadius;
-        randomOffset.y = 0; // Keep enemies on ground level
+        randomOffset.y = 0;
         Vector3 spawnPosition = transform.position + randomOffset;
         
-        // Spawn enemy
         GameObject enemy = Instantiate(spawnData.enemyPrefab, spawnPosition, Quaternion.identity);
         
-        // Randomize scale
         float randomScale = Random.Range(minScale, maxScale);
         enemy.transform.localScale = Vector3.one * randomScale;
         
-        // Set randomized health (base health * scale)
         EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
         if (enemyHealth != null)
         {
             float scaledHealth = spawnData.baseHealth * randomScale;
             enemyHealth.SetMaxHealth(scaledHealth);
             
-            Debug.Log($"Spawned {spawnData.enemyName} - Scale: {randomScale:F2}, Health: {scaledHealth:F0}");
+            // NEW: Set point value
+            enemyHealth.SetPointValue(spawnData.pointValue);
+            
+            Debug.Log($"Spawned {spawnData.enemyName} - Scale: {randomScale:F2}, Health: {scaledHealth:F0}, Points: {spawnData.pointValue}");
         }
         
-        // Track enemy count
         currentEnemyCount++;
         
-        // Subscribe to enemy death to update count
         EnemyDeathTracker tracker = enemy.AddComponent<EnemyDeathTracker>();
         tracker.spawner = this;
     }
     
     EnemySpawnData GetWeightedRandomEnemy()
     {
-        // Calculate total weight
         float totalWeight = 0f;
         foreach (EnemySpawnData enemy in enemyTypes)
         {
@@ -112,10 +105,8 @@ public class EnemySpawner : MonoBehaviour
             return enemyTypes[Random.Range(0, enemyTypes.Count)];
         }
         
-        // Pick a random value between 0 and total weight
         float randomValue = Random.Range(0f, totalWeight);
         
-        // Find which enemy this value corresponds to
         float cumulativeWeight = 0f;
         foreach (EnemySpawnData enemy in enemyTypes)
         {
@@ -126,17 +117,15 @@ public class EnemySpawner : MonoBehaviour
             }
         }
         
-        // Fallback (shouldn't happen)
         return enemyTypes[enemyTypes.Count - 1];
     }
     
     public void OnEnemyDied()
     {
         currentEnemyCount--;
-        currentEnemyCount = Mathf.Max(0, currentEnemyCount); // Prevent negative
+        currentEnemyCount = Mathf.Max(0, currentEnemyCount);
     }
     
-    // Public methods to control spawner
     public void StartSpawning()
     {
         if (!isSpawning)
@@ -151,7 +140,6 @@ public class EnemySpawner : MonoBehaviour
         StopAllCoroutines();
     }
     
-    // Visualize spawn radius in editor
     void OnDrawGizmos()
     {
         if (showSpawnRadius)
@@ -165,7 +153,6 @@ public class EnemySpawner : MonoBehaviour
     }
 }
 
-// Helper class to track when enemies die
 public class EnemyDeathTracker : MonoBehaviour
 {
     public EnemySpawner spawner;
@@ -182,11 +169,12 @@ public class EnemyDeathTracker : MonoBehaviour
 [System.Serializable]
 public class EnemySpawnData
 {
-    public string enemyName; // For identification in inspector
+    public string enemyName;
     public GameObject enemyPrefab;
-    public float baseHealth = 50f; // Base health before scaling
+    public float baseHealth = 50f;
+    public int pointValue = 10; // NEW: Points awarded when killed
     
     [Header("Spawn Rate")]
     [Range(0f, 100f)]
-    public float spawnWeight = 50f; // Higher = more common
+    public float spawnWeight = 50f;
 }
