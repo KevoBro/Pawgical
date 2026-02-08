@@ -9813,7 +9813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LightningAOE
   radius: 4
   duration: 4
-  damagePerTick: 5
+  damagePerTick: 10
   tickInterval: 0.5
   stunEnemies: 1
   stunDuration: 0.3

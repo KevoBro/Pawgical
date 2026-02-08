@@ -39,6 +39,13 @@ public class EnemyHealth : MonoBehaviour
         }
     }
     
+    // NEW METHOD: Allow spawner to set custom health
+    public void SetMaxHealth(float health)
+    {
+        maxHealth = health;
+        currentHealth = health;
+    }
+    
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
