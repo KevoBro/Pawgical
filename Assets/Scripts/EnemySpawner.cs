@@ -58,10 +58,10 @@ public class EnemySpawner : MonoBehaviour
     
     void SpawnRandomEnemy()
     {
-        // Pick random enemy type
-        EnemySpawnData spawnData = enemyTypes[Random.Range(0, enemyTypes.Count)];
+        // Pick random enemy type based on spawn weights
+        EnemySpawnData spawnData = GetWeightedRandomEnemy();
         
-        if (spawnData.enemyPrefab == null)
+        if (spawnData == null || spawnData.enemyPrefab == null)
         {
             Debug.LogError($"Enemy prefab not assigned in spawner '{gameObject.name}'");
             return;
@@ -95,6 +95,39 @@ public class EnemySpawner : MonoBehaviour
         // Subscribe to enemy death to update count
         EnemyDeathTracker tracker = enemy.AddComponent<EnemyDeathTracker>();
         tracker.spawner = this;
+    }
+    
+    EnemySpawnData GetWeightedRandomEnemy()
+    {
+        // Calculate total weight
+        float totalWeight = 0f;
+        foreach (EnemySpawnData enemy in enemyTypes)
+        {
+            totalWeight += enemy.spawnWeight;
+        }
+        
+        if (totalWeight <= 0)
+        {
+            Debug.LogWarning("Total spawn weight is 0. Using equal probability.");
+            return enemyTypes[Random.Range(0, enemyTypes.Count)];
+        }
+        
+        // Pick a random value between 0 and total weight
+        float randomValue = Random.Range(0f, totalWeight);
+        
+        // Find which enemy this value corresponds to
+        float cumulativeWeight = 0f;
+        foreach (EnemySpawnData enemy in enemyTypes)
+        {
+            cumulativeWeight += enemy.spawnWeight;
+            if (randomValue <= cumulativeWeight)
+            {
+                return enemy;
+            }
+        }
+        
+        // Fallback (shouldn't happen)
+        return enemyTypes[enemyTypes.Count - 1];
     }
     
     public void OnEnemyDied()
@@ -152,4 +185,8 @@ public class EnemySpawnData
     public string enemyName; // For identification in inspector
     public GameObject enemyPrefab;
     public float baseHealth = 50f; // Base health before scaling
+    
+    [Header("Spawn Rate")]
+    [Range(0f, 100f)]
+    public float spawnWeight = 50f; // Higher = more common
 }
