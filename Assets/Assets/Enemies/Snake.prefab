@@ -126,6 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 30
+  flashDuration: 0.2
+  damageColor: {r: 1, g: 0, b: 0, a: 1}
+  deathEffectPrefab: {fileID: 5977586517971993488, guid: 0866a7d04bd66584bb5f864d602b85ce, type: 3}
+  effectDuration: 2
+  fadeOutOnDeath: 1
+  fadeOutDuration: 0.5
 --- !u!1 &409769994469182181
 GameObject:
   m_ObjectHideFlags: 0
