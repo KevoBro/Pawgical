@@ -66,7 +66,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31874130230302956}
   m_Enabled: 1
-  m_AgentTypeID: -334000983
+  m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 0.2
   m_Acceleration: 8
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c19090735816bc4aa8a7a8c558091f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyZigZagNavMesh
-  moveSpeed: 0.2
+  moveSpeed: 1
   stoppingDistance: 1
   zigzagFrequency: 20
   zigzagAmplitude: 2
