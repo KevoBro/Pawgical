@@ -533,7 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
   damage: 10
   attackInterval: 3
-  attackRange: 3
+  attackRange: 5
 --- !u!114 &1206254106062203878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,6 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
   maxHealth: 10
+  pointValue: 10
   flashDuration: 0.2
   damageColor: {r: 1, g: 0, b: 0, a: 1}
   deathEffectPrefab: {fileID: 5977586517971993488, guid: 0866a7d04bd66584bb5f864d602b85ce, type: 3}
